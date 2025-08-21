@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Event, EventRegistration
 
 
-class EventSerializer(serializers.Serializer):
+class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = "__all__"

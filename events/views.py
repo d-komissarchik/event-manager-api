@@ -25,6 +25,6 @@ class EventViewSet(viewsets.ModelViewSet):
 
 
 class EventRegistrationViewSet(viewsets.ModelViewSet):
-    queryset = Event.objects.all()
+    queryset = EventRegistration.objects.all()
     serializer_class = EventRegistrationSerializer
     permission_classes = [permissions.IsAuthenticated]
