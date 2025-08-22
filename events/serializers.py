@@ -14,10 +14,10 @@ class EventRegistrationSerializer(serializers.ModelSerializer):
         fields = ['id', 'user', 'event', 'date']
         read_only_fields = ['user', 'date']
 
-    def create(self, data):
+    def create(self, validated_data):
         user = self.context['request'].user
-        event = data['event']
+        event = validated_data['event']
         if EventRegistration.objects.filter(user=user, event=event).exists():
             raise serializers.ValidationError("Вже зареєстровано на це подію")
-        data['user'] = user
-        return super().create(data)
+        validated_data['user'] = user
+        return super().create(validated_data)
