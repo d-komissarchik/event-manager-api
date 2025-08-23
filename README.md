@@ -19,7 +19,7 @@ The project is built with **Django REST Framework**, uses **JWT authentication**
 
 ### 1. Clone the repository
 
-git clone https://github.com/d-komissarchik/event-manager-api.git
+git clone https://github.com/d-komissarchik/event-manager-api.git  
 cd event-manager-api
 
 ### 2. Run the project with Docker
@@ -42,7 +42,7 @@ http://localhost:8000/swagger/
 
 ##  Authentication
 
-- Register user: POST /api/auth/register/
+- Register user: POST /api/auth/register/  
 Request body:
     {
       "username": "testuser",
@@ -50,14 +50,14 @@ Request body:
       "password": "testpassword123"
     }
 
-- Obtain tokens: POST /api/auth/token/
+- Obtain tokens: POST /api/auth/token/  
 Request body:
     {
       "username": "testuser",
       "password": "testpassword123"
     }
 
-- Refresh access token: POST /api/auth/token/refresh/
+- Refresh access token: POST /api/auth/token/refresh/  
 Request body:
     {
       "refresh": "<refresh_token>"
@@ -83,45 +83,45 @@ Request body:
 
 ##  EventsRegistrations
 
-Register for event: POST /api/registrations/
+Register for event: POST /api/registrations/  
 Request body:
     {
       "event": 1
     }
 
-List registrations: GET /api/registrations/
+List registrations: GET /api/registrations/  
 
 ---
 
 ##  🧪 Running Tests
 
 Tests are automatically executed when the project is started with Docker Compose.
-You can also run them manually:
+You can also run them manually:  
 
 docker-compose run web python manage.py test
 
 ---
 
 ## 📂 Project Structure
-Event_manager/
-├── events/          # Events app (models, views, serializers, tests)
-├── users/           # Users app (registration, authentication)
-├── Event_manager/   # Main project config
-├── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
+Event_manager/  
+├── events/          # Events app (models, views, serializers, tests)  
+├── users/           # Users app (registration, authentication)  
+├── Event_manager/   # Main project config  
+├── requirements.txt  
+├── Dockerfile  
+├── docker-compose.yml  
 
 ---
 
 ## ✅ Requirements
 
-Django>=5.0,<6.0
-djangorestframework
-drf-yasg
-djangorestframework-simplejwt
-django-filter
-gunicorn
-psycopg2-binary
-drf-yasg
+Django>=5.0,<6.0  
+djangorestframework  
+drf-yasg  
+djangorestframework-simplejwt  
+django-filter  
+gunicorn  
+psycopg2-binary  
+drf-yasg  
 
 
